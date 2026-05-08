@@ -1,0 +1,60 @@
+run_statistical_benchmark_r <- function() {
+  TEST_SIZE <- 10000000
+
+  cat("Starting R Statistical Benchmarking Test\n")
+  cat(paste0("Test size for data generation: ", TEST_SIZE, " elements\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  start_time <- Sys.time()
+  random_numbers <- runif(TEST_SIZE, min = 0.0, max = 1000000.0)
+  end_time <- Sys.time()
+  generation_time <- as.numeric(end_time - start_time, units = "secs")
+  data_memory <- object.size(random_numbers)
+  cat(paste0("Generated ", TEST_SIZE, " random numbers.\n"))
+  cat(paste0("Time taken for data generation: ", format(round(generation_time, 4), nsmall = 4), " seconds\n"))
+  cat(paste0("Approximate memory for data vector: ", format(round(data_memory / (1024 * 1024), 2), nsmall = 2), " MB\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  start_time <- Sys.time()
+  mean_val <- mean(random_numbers)
+  end_time <- Sys.time()
+  mean_time <- as.numeric(end_time - start_time, units = "secs")
+  cat(paste0("Calculated Mean: ", format(mean_val, digits = 4), "\n"))
+  cat(paste0("Time taken for mean calculation: ", format(round(mean_time, 4), nsmall = 4), " seconds\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  start_time <- Sys.time()
+  median_val <- median(random_numbers)
+  end_time <- Sys.time()
+  median_time <- as.numeric(end_time - start_time, units = "secs")
+  cat(paste0("Calculated Median: ", format(median_val, digits = 4), "\n"))
+  cat(paste0("Time taken for median calculation: ", format(round(median_time, 4), nsmall = 4), " seconds\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  start_time <- Sys.time()
+  sd_val <- sd(random_numbers)
+  end_time <- Sys.time()
+  sd_time <- as.numeric(end_time - start_time, units = "secs")
+  cat(paste0("Calculated Standard Deviation: ", format(sd_val, digits = 4), "\n"))
+  cat(paste0("Time taken for standard deviation calculation: ", format(round(sd_time, 4), nsmall = 4), " seconds\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  start_time <- Sys.time()
+  var_val <- var(random_numbers)
+  end_time <- Sys.time()
+  var_time <- as.numeric(end_time - start_time, units = "secs")
+  cat(paste0("Calculated Variance: ", format(var_val, digits = 4), "\n"))
+  cat(paste0("Time taken for variance calculation: ", format(round(var_time, 4), nsmall = 4), " seconds\n"))
+  cat(paste0(paste(rep("-", 50), collapse = ""), "\n"))
+
+  cat("Benchmarking Complete.\n")
+  cat("\nSummary Score:\n")
+  cat(paste0("Data Generation Time: ", format(round(generation_time, 4), nsmall = 4), " s\n"))
+  cat(paste0("Data Vector Memory (approx): ", format(round(data_memory / (1024 * 1024), 2), nsmall = 2), " MB\n"))
+  cat(paste0("Mean Calculation Time: ", format(round(mean_time, 4), nsmall = 4), " s\n"))
+  cat(paste0("Median Calculation Time: ", format(round(median_time, 4), nsmall = 4), " s\n"))
+  cat(paste0("Standard Deviation Calculation Time: ", format(round(sd_time, 4), nsmall = 4), " s\n"))
+  cat(paste0("Variance Calculation Time: ", format(round(var_time, 4), nsmall = 4), " s\n"))
+}
+
+run_statistical_benchmark_r()
