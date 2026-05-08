@@ -1,1 +1,5 @@
 # Python_simple_benchmark
+
+# DONT RUN ANY CODE IN THIS REPOSITORY BEFORE REVIEWING ON YOUR OWN. IF IN CASE YOU CANNOT PLEASE DONT RUN THE CODE IN THIS REPOSITORY. AI WAS USED TO GENERATE SOME PARTS OF CODE. NO SPONSORSHIP BY ANY AI COMPANY OR GROUP WAS GIVEN. NEITHER ANY ASSOCIATIONS.
+
+## Purpose: to make python based vanila scripts that test the capabilities of mobile processors on a phone. Yes! phones.
